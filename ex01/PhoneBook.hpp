@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:32:48 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/05/07 15:58:55 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:13:57 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ class PhoneBook
 	public:
 	PhoneBook(void);
 	~PhoneBook(void);
-	bool addContact(void);
+	void addContact(void);
 	void searchContact(void);
-	void printContact(void);
+	void printContact(Contact contact);
 	
 	private:
 	Contact contacts[8];
+	int nbrContacts;
+	int toReplace;
 };
 
 #endif

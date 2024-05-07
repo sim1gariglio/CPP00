@@ -12,6 +12,12 @@ Contact::~Contact(void)
 	return ;
 }
 
+void Contact::setIndex(int index)
+{
+	this->index = index;
+	return ;
+}
+
 void Contact::setFirstName(std::string firstName)
 {
 	this->firstName = firstName;
@@ -40,4 +46,34 @@ void Contact::setDarkestSecret(std::string darkestSecret)
 {
 	this->darkestSecret = darkestSecret;
 	return ;
+}
+
+std::string Contact::getIndex(void) const
+{
+	return (std::to_string(this->index));
+}
+
+std::string	Contact::getFirstName(void) const
+{
+	return (this->firstName);
+}
+
+std::string Contact::getLastName(void) const
+{
+	return (this->lastName);
+}
+
+std::string Contact::getNickname(void) const
+{
+	return (this->nickname);
+}
+
+std::string Contact::getPhoneNumber(void) const
+{
+	return (this->phoneNumber);
+}
+
+std::string Contact::getDarkestSecret(void) const
+{
+	return (this->darkestSecret);
 }

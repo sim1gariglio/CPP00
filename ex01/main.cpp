@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:29:03 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/05/07 15:54:45 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:06:08 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(void)
 	while(1)
 	{
 		std::cout << "Avaiable commands: ADD | SEARCH | EXIT" << std::endl;
-		std::getline(std::cin, cmd);
+		if(!(std::cin >> cmd))
+			exit(1);
 		if (cmd == "EXIT")
 			break;
 		else if (cmd == "ADD")
@@ -30,4 +31,5 @@ int	main(void)
 		else
 			std::cout << "Invalid command" << std::endl;
 	}
+	return (0);
 }
