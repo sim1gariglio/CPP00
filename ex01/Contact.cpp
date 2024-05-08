@@ -48,9 +48,9 @@ void Contact::setDarkestSecret(std::string darkestSecret)
 	return ;
 }
 
-std::string Contact::getIndex(void) const
+int Contact::getIndex(void) const
 {
-	return (std::to_string(this->index));
+	return (this->index);
 }
 
 std::string	Contact::getFirstName(void) const

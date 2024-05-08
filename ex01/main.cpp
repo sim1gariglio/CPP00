@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:29:03 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/05/07 17:06:08 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:05:23 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,12 @@ int	main(void)
 		else if (cmd == "ADD")
 			instance.addContact();
 		else if (cmd == "SEARCH")
-			instance.searchContact();
+		{
+			if (instance.getnbrContacts() == 0)
+				std::cout << "No contacts available" << std::endl;
+			else
+				instance.searchContact();
+		}
 		else
 			std::cout << "Invalid command" << std::endl;
 	}

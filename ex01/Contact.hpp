@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:30:54 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/05/07 17:07:23 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/05/08 10:18:43 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 # include <iostream>
 # include <string>
+# include <cstdlib>
 
 class Contact
 {
@@ -27,7 +28,7 @@ class Contact
 	void setNickname(std::string nickname);
 	void setPhoneNumber(std::string phoneNumber);
 	void setDarkestSecret(std::string darkestSecret);
-	std::string getIndex(void) const;
+	int	getIndex(void) const;
 	std::string	getFirstName(void) const;
 	std::string getLastName(void) const;
 	std::string getNickname(void) const;
