@@ -52,8 +52,7 @@ void	PhoneBook::addContact(void)
 	do
 	{
 		std::cout << "Enter darkest secret: ";
-		if (!(std::cin >> darkestSecret))
-			exit(1);
+		std::getline(std::cin, darkestSecret);
 	} while (!isaString(darkestSecret));
 	newContact.setDarkestSecret(darkestSecret);
 	if (this->nbrContacts < 8)
@@ -71,21 +70,24 @@ void	PhoneBook::addContact(void)
 }
 void PhoneBook::searchContact(void)
 {
-	std::string index;
+	int index;
 	std::cout << "Search contact" << std::endl;
 	printTable(contacts);
 	while (true)
 	{
-		do 
+		std::cout << "Enter index: ";
+		if (!(std::cin >> index))
 		{
-			std::cout << "Enter index: ";
-			if (!(std::cin >> index))
-				exit(1);
-			
+			std::cout << index;
+			continue;
 		}
-		while (index.atoi() < 0 || index >= getnbrContacts());
-		printContact(index);
-		break;
+		if (index < 0 || index >= getnbrContacts())
+			std::cout << "Invalid index" << std::endl;
+		else
+		{
+			printContact(index);
+			break;
+		}
 	}
 	return ;
 }
