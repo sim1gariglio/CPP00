@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:32:48 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/05/09 11:21:44 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:45:21 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class PhoneBook
 	bool 	isaSentence(std::string str);
 
 	private:
-	Contact contacts[8];
-	int nbrContacts;
+	Contact _contacts[8];
+	int _nbrContacts;
 };
 
 #endif

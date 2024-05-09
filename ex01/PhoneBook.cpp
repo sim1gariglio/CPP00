@@ -1,6 +1,6 @@
 # include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) : nbrContacts(0)
+PhoneBook::PhoneBook(void) : _nbrContacts(0)
 {
 	std::cout << "PhoneBook created" << std::endl;
 	return ;
@@ -56,17 +56,17 @@ void	PhoneBook::addContact(void)
 			std::exit(1);
 	} while (!isaSentence(darkestSecret));
 	newContact.setDarkestSecret(darkestSecret);
-	if (this->nbrContacts < 8)
+	if (this->_nbrContacts < 8)
 	{
-		this->contacts[this->nbrContacts] = newContact;
-		this->nbrContacts++;
-		newContact.setIndex(this->nbrContacts);
+		this->_contacts[this->_nbrContacts] = newContact;
+		this->_nbrContacts++;
+		newContact.setIndex(this->_nbrContacts);
 	}
 	else
 	{
 		for(int i = 0; i < 7; i++)
-			this->contacts[i] = this->contacts[(i + 1)]; 
-		this->contacts[7] = newContact;	
+			this->_contacts[i] = this->_contacts[(i + 1)]; 
+		this->_contacts[7] = newContact;	
 	}
 	return ;
 }
@@ -74,7 +74,7 @@ void PhoneBook::searchContact(void)
 {
 	std::string index;
 	std::cout << "Search contact" << std::endl;
-	printTable(contacts);
+	printTable(_contacts);
 	while (true)
 	{
 		std::cout << "Enter index: ";
@@ -99,11 +99,11 @@ void PhoneBook::printTable(Contact *contact)
 	std::string nickName;
 
 	std::cout << "|     Index|First name| Last name|  Nickname|" << std::endl;
-	for (int i = 0; i < this->nbrContacts; i++)
+	for (int i = 0; i < this->_nbrContacts; i++)
 	{
-		firstName = this->contacts[i].getFirstName();
-		lastName = this->contacts[i].getLastName();
-		nickName = this->contacts[i].getNickname();
+		firstName = this->_contacts[i].getFirstName();
+		lastName = this->_contacts[i].getLastName();
+		nickName = this->_contacts[i].getNickname();
 		std::cout << "|         " << i << "|"; 
 		printMember(firstName);
 		printMember(lastName);
@@ -129,7 +129,7 @@ void PhoneBook::printMember(std::string member)
 
 int PhoneBook::getnbrContacts(void) const
 {
-	return (this->nbrContacts);
+	return (this->_nbrContacts);
 }
 
 
@@ -141,11 +141,11 @@ void PhoneBook::printContact(int index)
 	std::string phoneNumber;
 	std::string darkestSecret;
 
-	firstName = this->contacts[index].getFirstName();
-	lastName = this->contacts[index].getLastName();
-	nickname = this->contacts[index].getNickname();
-	phoneNumber = this->contacts[index].getPhoneNumber();
-	darkestSecret = this->contacts[index].getDarkestSecret();
+	firstName = this->_contacts[index].getFirstName();
+	lastName = this->_contacts[index].getLastName();
+	nickname = this->_contacts[index].getNickname();
+	phoneNumber = this->_contacts[index].getPhoneNumber();
+	darkestSecret = this->_contacts[index].getDarkestSecret();
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "Contact info" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;

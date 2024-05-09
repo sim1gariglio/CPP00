@@ -2,19 +2,19 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Contact created" << std::endl;
+	//std::cout << "Contact created" << std::endl;
 	return ;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Contact destroyed" << std::endl;
+	//std::cout << "Contact destroyed" << std::endl;
 	return ;
 }
 
 void Contact::setIndex(int index)
 {
-	this->index = index;
+	this->_index = index;
 	return ;
 }
 
@@ -50,7 +50,7 @@ void Contact::setDarkestSecret(std::string darkestSecret)
 
 int Contact::getIndex(void) const
 {
-	return (this->index);
+	return (this->_index);
 }
 
 std::string	Contact::getFirstName(void) const

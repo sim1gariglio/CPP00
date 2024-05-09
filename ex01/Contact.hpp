@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:30:54 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/05/09 10:29:17 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:45:11 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Contact
 	std::string getDarkestSecret(void) const;
 
 	private:
-	int			index;
+	int			_index;
 	std::string firstName;
 	std::string lastName;
 	std::string nickname;
