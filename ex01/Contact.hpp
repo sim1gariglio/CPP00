@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:30:54 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/05/08 10:18:43 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/05/09 10:29:17 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <iostream>
 # include <string>
 # include <cstdlib>
+# include <cstdio>
 
 class Contact
 {

@@ -17,42 +17,43 @@ void	PhoneBook::addContact(void)
 	Contact newContact;
 	std::string firstName;
 	std::string lastName;
-	std::string nickname;
+	std::string nickName;
 	std::string phoneNumber;
 	std::string darkestSecret;
 
 	do
 	{
 		std::cout << "Enter first name: ";
-		if (!(std::cin >> firstName))
-			exit(1);
+		if(!getline(std::cin, firstName))
+			std::exit(1);
 	} while (!isaString(firstName));
 	newContact.setFirstName(firstName);
 	do
 	{
 		std::cout << "Enter last name: ";
-		if (!(std::cin >> lastName))
-			exit(1);
+		if(!getline(std::cin, lastName))
+			std::exit(1);
 	} while (!isaString(lastName));
 	newContact.setLastName(lastName);
 	do
 	{
 		std::cout << "Enter nickname: ";
-		if (!(std::cin >> nickname))
-			exit(1);
-	} while (!isaNick(nickname));
-	newContact.setNickname(nickname);
+		if(!getline(std::cin, nickName))
+			std::exit(1);
+	} while (!isaNick(nickName));
+	newContact.setNickname(nickName);
 	do
 	{
 		std::cout << "Enter phone number: ";
-		if (!(std::cin >> phoneNumber))
-			exit(1);
+		if(!getline(std::cin, phoneNumber))
+			std::exit(1);
 	} while (!isaPnumber(phoneNumber));
 	newContact.setPhoneNumber(phoneNumber);
 	do
 	{
 		std::cout << "Enter darkest secret: ";
-		std::getline(std::cin, darkestSecret);
+		if(!getline(std::cin, darkestSecret))
+			std::exit(1);
 	} while (!isaString(darkestSecret));
 	newContact.setDarkestSecret(darkestSecret);
 	if (this->nbrContacts < 8)
@@ -70,22 +71,19 @@ void	PhoneBook::addContact(void)
 }
 void PhoneBook::searchContact(void)
 {
-	int index;
+	std::string index;
 	std::cout << "Search contact" << std::endl;
 	printTable(contacts);
 	while (true)
 	{
 		std::cout << "Enter index: ";
-		if (!(std::cin >> index))
-		{
-			std::cout << index;
-			continue;
-		}
-		if (index < 0 || index >= getnbrContacts())
+		if(!getline(std::cin, index))
+			std::exit(1);
+		if (index[0] < '0' || index[0] >= getnbrContacts() + '0')
 			std::cout << "Invalid index" << std::endl;
 		else
 		{
-			printContact(index);
+			printContact(index[0] - '0');
 			break;
 		}
 	}
@@ -132,6 +130,11 @@ bool PhoneBook::isaString(std::string str)
 {
 	int i = 0;
 
+	if(str.empty())
+	{
+		std::cout << "STRING CANNOT BE EMPTY!!" << std::endl;
+		return (false);
+	}
 	while (str[i])
 	{
 		if (!std::isalpha(str[i]))
@@ -148,6 +151,11 @@ bool PhoneBook::isaPnumber(std::string str)
 {
 	int i = 1;
 
+	if(str.empty())
+	{
+		std::cout << "STRING CANNOT BE EMPTY!!" << std::endl;
+		return (false);
+	}
 	if (str[0] != '+' && !std::isdigit(str[0]))
 	{
 		std::cout << "Invalid input" << std::endl;
@@ -169,6 +177,11 @@ bool PhoneBook::isaNick(std::string str)
 {
 	int i = 0;
 
+	if(str.empty())
+	{
+		std::cout << "STRING CANNOT BE EMPTY!!" << std::endl;
+		return (false);
+	}
 	while (str[i])
 	{
 		if (!std::isalnum(str[i]))
@@ -204,10 +217,14 @@ void PhoneBook::printContact(int index)
 	nickname = this->contacts[index].getNickname();
 	phoneNumber = this->contacts[index].getPhoneNumber();
 	darkestSecret = this->contacts[index].getDarkestSecret();
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "Contact info" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "First name: " << firstName << std::endl;
 	std::cout << "Last name: " << lastName << std::endl;
 	std::cout << "Nickname: " << nickname << std::endl;
 	std::cout << "Phone number: " << phoneNumber << std::endl;
 	std::cout << "Darkest secret: " << darkestSecret << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 	return ;
 }

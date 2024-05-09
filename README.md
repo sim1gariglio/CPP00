@@ -1,3 +1,7 @@
 # CPP00
 
-Devo cambiare il modo di prendere l'input per gestire gli spazi
+DA implementare
+
+Darkest secret
+index piu' di una cifra
+contatti che scalano
