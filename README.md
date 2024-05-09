@@ -2,6 +2,6 @@
 
 DA implementare
 
-Darkest secret
-index piu' di una cifra
-contatti che scalano
+Darkest secret ok
+index piu' di una cifra ok
+contatti che scalano ok

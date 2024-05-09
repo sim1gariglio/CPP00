@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:32:48 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/05/08 12:09:31 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/05/09 11:21:44 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,20 @@ class PhoneBook
 	public:
 	PhoneBook(void);
 	~PhoneBook(void);
-	void addContact(void);
-	void searchContact(void);
-	void printTable(Contact *contact);
-	void printMember(std::string member);
-	bool isaString(std::string str);
-	bool isaPnumber(std::string str);
-	bool isaNick(std::string str);
-	int		getnbrContacts(void) const;
-	int		gettoReplace(void) const;
+	void 	addContact(void);
+	void 	searchContact(void);
 	void 	printContact(int index);
+	void 	printTable(Contact *contact);
+	void 	printMember(std::string member);
+	int		getnbrContacts(void) const;
+	bool 	isaString(std::string str);
+	bool 	isaPnumber(std::string str);
+	bool 	isaNick(std::string str);
+	bool 	isaSentence(std::string str);
 
 	private:
 	Contact contacts[8];
 	int nbrContacts;
-	int toReplace;
 };
 
 #endif
