@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 09:30:54 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/05/09 12:45:11 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/05/10 11:59:13 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ class Contact
 	Contact(void);
 	~Contact(void);
 	void setIndex(int index);
-	void setFirstName(std::string firstName);
-	void setLastName(std::string lastName);
-	void setNickname(std::string nickname);
-	void setPhoneNumber(std::string phoneNumber);
-	void setDarkestSecret(std::string darkestSecret);
+	void setFirstName(const std::string firstName);
+	void setLastName(const std::string lastName);
+	void setNickname(const std::string nickname);
+	void setPhoneNumber(const std::string phoneNumber);
+	void setDarkestSecret(const std::string darkestSecret);
 	int	getIndex(void) const;
 	std::string	getFirstName(void) const;
 	std::string getLastName(void) const;
